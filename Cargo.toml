@@ -1,0 +1,19 @@
+[package]
+name = "stmrust"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+opt-level = "s"
+lto = true
+panic = "abort"
+codegen-units = 1
+
+[dependencies]
+panic-halt = "0.2.0"
+cortex-m = "0.7.6"
+cortex-m-rt = "0.7.1"
+
+[dependencies.stm32f1xx-hal]
+version = "0.10.0"
+features = ["rt", "stm32f103"]
